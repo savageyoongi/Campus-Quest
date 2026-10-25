@@ -4,13 +4,71 @@
 <head>
     <meta charset = "UTF-8">
     <meta name = "viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus Quest</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Campus Quest-IIT Roorkee</title>
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+>
 </head>
 <body>
+    <header class="site-header">
     <h1>Campus Quest: IIT Roorkee</h1>
     <p> Explore the campus by solving one question at a time.</p>
-    <button id="start-button"> Start Exploring</button>
+    <button id="start-button", type="button"> Start Exploring</button>
+
+    <div class="stats">
+        <p>Score: <strong id="score">0</strong></p>
+        <p>Discoveries: <strong id="discoveries">0</strong></p>
+    </div>
+    </header>
+
+    <main class="game-layout">
+
+        <section class="question-card">
+            <p class="label">CAMPUS CHALLENGE</p>
+
+            <h2 id="question-text">
+                Which building's terrace has the best view?
+            </h2>
+
+        <p>Choose your answer:</p>
+
+        <div class="answer-options">
+            <button class="answer-button" 
+            data-correct="true">
+                Chemistry Dept New Building
+            </button>
+             <button class="answer-button" 
+             data-correct="false">
+                Mechanical Dept
+            </button>
+             <button class="answer-button"
+              data-correct="false">
+                Maths and Humanities Dept 
+            </button>
+             <button class="answer-button" 
+             data-correct="false">
+                MAC
+            </button>
+        </div>
+           
+        <p id="feedback" aria-live="polite">Click Start Exploring to begin.</p>
+             
+        </section>
+        <section class="map-panel">
+           <h2>Campus Map</h2>
+           <p>The interactive map will appear here.</p>
+
+           <div class="map-placeholder">
+                <span>📍</span>
+                <p>Ready to explore?</p>
+            </div>
+        </section>
+
+    </main>
+    
 
     <script src="script.js"></script>
 </body>
