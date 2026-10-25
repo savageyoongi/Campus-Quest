@@ -71,3 +71,24 @@ answerButtons.forEach(function (button) {
         }
     });
 });
+
+// Create the map and choose its starting view
+const campusMap = L.map("map").setView(
+    [29.86635, 77.89621],
+    16
+);
+
+// Add the OpenStreetMap background tiles
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">' +
+        'OpenStreetMap</a> contributors'
+}).addTo(campusMap);
+
+// Add a marker at the approximate IIT Roorkee campus reference point
+const campusMarker = L.marker(
+    [29.86635, 77.89621]
+).addTo(campusMap);
+
+campusMarker.bindPopup("IIT Roorkee — starting point");
